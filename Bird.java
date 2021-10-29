@@ -1,6 +1,7 @@
 public class Bird extends Animal {
   public double height;
   public String color;
+  //Lee starts
 
   public Bird(String noise, int age, String name, double height, String color){
     //construct the Bird
