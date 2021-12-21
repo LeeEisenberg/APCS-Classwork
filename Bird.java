@@ -4,7 +4,9 @@ public class Bird extends Animal {
   //Lee starts
 
   public Bird(String noise, int age, String name, double height, String color){
-    //construct the Bird
+    super(noise, age, name);
+    this.height = height;
+    this.color = color;
   }
 
 
@@ -17,5 +19,8 @@ public class Bird extends Animal {
     I am ?
     I am ? inches tall
     */
+    super.speak();
+    System.out.println("I am " + color);
+    System.out.println("I am " + height + " inches tall");
   }
 }
