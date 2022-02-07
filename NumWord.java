@@ -1,5 +1,6 @@
 public class NumWord{
   public static String numWord(int num){
+    //currently works up to 1 billion
     int temp;
     if (num/10 == 0){
       temp = num;
@@ -67,15 +68,24 @@ public class NumWord{
         return "ninety-" + numWord(num%10);
       }
     }else if (num/1000 == 0){
-      temp = num/100;
-      return numWord(temp) + " hundred " + numWord(num%100);
+      return numWord(num/100) + " hundred " + numWord(num%100);
+    }else if (num/1000000 == 0){
+      return numWord(num/1000) + " thousand " + numWord(num%1000);
+    }else if (num/1000000000 == 0){
+      return numWord(num/1000000) + " million " + numWord(num%1000000);
     }
     return "-1";
   }
 
   public static void main(String[] args){
     System.out.println(numWord(0));
-    System.out.println(numWord(45));
-    System.out.println(numWord(274));
+    System.out.println(numWord(31));
+    System.out.println(numWord(415));
+    System.out.println(numWord(9265));
+    System.out.println(numWord(35897));
+    System.out.println(numWord(932384));
+    System.out.println(numWord(6264338));
+    System.out.println(numWord(32795028));
+    System.out.println(numWord(841971693));
   }
 }
