@@ -1,7 +1,10 @@
 public class NumWord{
   public static String numWord(int num){
-    //currently works up to 1 billion
+    //currently works up to 1 million
     int temp;
+    if (num < 0){
+      return "negative " + numWord(-1 * num);
+    }
     if (num/10 == 0){
       temp = num;
       if (temp == 0){
@@ -87,5 +90,6 @@ public class NumWord{
     System.out.println(numWord(6264338));
     System.out.println(numWord(32795028));
     System.out.println(numWord(841971693));
+    System.out.println(numWord(-991058209));
   }
 }
